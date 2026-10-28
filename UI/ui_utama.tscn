@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bk2ba021pb0of"]
+
+[node name="UI_utama" type="CanvasLayer" unique_id=30895415]
+
+[node name="Panel" type="Panel" parent="." unique_id=2003985414]
+visible = false
+offset_left = 915.0
+offset_top = 432.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=185958013]
+layout_mode = 0
+offset_left = 926.0
+offset_right = 1152.0
+offset_bottom = 215.0
+
+[node name="Panel2" type="Panel" parent="." unique_id=2010669894]
+visible = false
+offset_top = 432.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel2" unique_id=243760730]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
