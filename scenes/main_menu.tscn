@@ -1,0 +1,163 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_script"]
+[ext_resource type="Theme" path="res://resources/ui_theme.tres" id="2_theme"]
+[ext_resource type="Texture2D" path="res://Aset2d/Aset1 lengkap/2 Background/Day/1.png" id="3_bg"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_script")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_bg")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="Shade" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0196078, 0.0509804, 0.0392157, 0.62)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Column" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Title" type="Label" parent="Center/Column"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "TEAM QUEST"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Center/Column"]
+layout_mode = 2
+theme_type_variation = &"Subtitle"
+text = "PETUALANGAN TIGA PERAN"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="Center/Column"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="Center/Column"]
+custom_minimum_size = Vector2(380, 54)
+layout_mode = 2
+theme_type_variation = &"MenuButton"
+text = "Mulai Petualangan"
+
+[node name="CreditsButton" type="Button" parent="Center/Column"]
+custom_minimum_size = Vector2(380, 54)
+layout_mode = 2
+theme_type_variation = &"MenuButton"
+text = "Kredit Tim"
+
+[node name="QuitButton" type="Button" parent="Center/Column"]
+custom_minimum_size = Vector2(380, 54)
+layout_mode = 2
+theme_type_variation = &"MenuButton"
+text = "Keluar"
+
+[node name="Footer" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -44.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_type_variation = &"PanelHint"
+text = "Kelompok 3 - Pengembangan Gim"
+horizontal_alignment = 1
+
+[node name="CreditsPanel" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CreditsShade" type="ColorRect" parent="CreditsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.74902)
+
+[node name="CreditsBox" type="PanelContainer" parent="CreditsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 300.0
+offset_top = 60.0
+offset_right = -300.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"PanelBox"
+
+[node name="CreditsScroll" type="ScrollContainer" parent="CreditsPanel/CreditsBox"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="CreditsList" type="VBoxContainer" parent="CreditsPanel/CreditsBox/CreditsScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="CreditsHeading" type="Label" parent="CreditsPanel/CreditsBox/CreditsScroll/CreditsList"]
+layout_mode = 2
+theme_type_variation = &"Heading"
+text = "KREDIT TIM"
+horizontal_alignment = 1
+
+[node name="Members" type="VBoxContainer" parent="CreditsPanel/CreditsBox/CreditsScroll/CreditsList"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="CreditsNote" type="Label" parent="CreditsPanel/CreditsBox/CreditsScroll/CreditsList"]
+layout_mode = 2
+theme_type_variation = &"Nim"
+text = "Game ini dikembangkan menggunakan Godot Engine."
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="CreditsPanel/CreditsBox/CreditsScroll/CreditsList"]
+custom_minimum_size = Vector2(220, 46)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"MenuButton"
+text = "Kembali"

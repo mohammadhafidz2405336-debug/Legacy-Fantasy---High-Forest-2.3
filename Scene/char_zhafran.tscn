@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://8yr0n0vrc31d"]
 
 [ext_resource type="Texture2D" uid="uid://ctlyh5dev3vds" path="res://Aset2d/Sprite_2D_Pertemuan8.png" id="1_subj6"]
+[ext_resource type="Script" uid="uid://d4brx0fov8jvg" path="res://scripts/player.gd" id="9_script"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vrqaf"]
 atlas = ExtResource("1_subj6")
@@ -250,19 +251,37 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bx8n8"]
-size = Vector2(34, 91)
+size = Vector2(26, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_attack"]
+size = Vector2(56, 86)
 
 [node name="Char_Zhafran" type="CharacterBody2D" unique_id=470736000]
+floor_snap_length = 6.0
+script = ExtResource("9_script")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=35740228]
+[node name="Char_Zhafran#Camera2D" type="Camera2D" parent="." unique_id=378875837]
+limit_left = 0
+limit_bottom = 648
+
+[node name="Char_Zhafran#AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=35740228]
+position = Vector2(0, 14)
 sprite_frames = SubResource("SpriteFrames_5h11f")
 animation = &"Run"
 autoplay = "Run"
 frame_progress = 0.82386464
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1413026881]
-position = Vector2(0, 28.5)
+[node name="Char_Zhafran#CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1413026881]
+position = Vector2(-4, 23.5)
 shape = SubResource("RectangleShape2D_bx8n8")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=799446956]
-position_smoothing_enabled = true
+[node name="Char_Zhafran#AttackHitbox" type="Area2D" parent="." unique_id=151553481]
+position = Vector2(34, 38)
+collision_layer = 0
+collision_mask = 4
+monitoring = false
+monitorable = false
+
+[node name="AttackHitbox#CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1413114959]
+position = Vector2(15, 28)
+shape = SubResource("RectangleShape2D_attack")

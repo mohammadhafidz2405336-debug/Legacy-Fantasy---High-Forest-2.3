@@ -1,0 +1,178 @@
+[gd_resource type="Theme" format=3 uid="uid://cs3x0ywxkxa46"]
+
+[ext_resource type="FontFile" uid="uid://brp78pmdn2onl" path="res://brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_regular"]
+[ext_resource type="FontFile" uid="uid://bidpbgrh2ybir" path="res://brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="2_bold"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_banner"]
+content_margin_left = 28.0
+content_margin_top = 18.0
+content_margin_right = 28.0
+content_margin_bottom = 18.0
+bg_color = Color(0.0588235, 0.109804, 0.0784314, 0.941176)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.960784, 0.772549, 0.258824, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_blank"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_health_bg"]
+bg_color = Color(0.0627451, 0.113725, 0.0862745, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.435294, 0.819608, 0.541176, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_health_fill"]
+bg_color = Color(0.494118, 0.878431, 0.541176, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+content_margin_left = 14.0
+content_margin_top = 14.0
+content_margin_right = 14.0
+content_margin_bottom = 14.0
+bg_color = Color(0.0627451, 0.113725, 0.0862745, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.435294, 0.819608, 0.541176, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel_soft"]
+content_margin_left = 10.0
+content_margin_top = 8.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+bg_color = Color(0.0509804, 0.101961, 0.0745098, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.435294, 0.819608, 0.541176, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_portrait"]
+bg_color = Color(0.0431373, 0.0784314, 0.0627451, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.960784, 0.772549, 0.258824, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[resource]
+default_font = ExtResource("1_regular")
+default_font_size = 24
+BannerPanel/base_type = &"PanelContainer"
+BannerPanel/styles/panel = SubResource("StyleBoxFlat_banner")
+BannerText/base_type = &"Label"
+BannerText/font_sizes/font_size = 24
+BannerTitle/base_type = &"Label"
+BannerTitle/colors/font_color = Color(0.960784, 0.772549, 0.258824, 1)
+BannerTitle/font_sizes/font_size = 48
+BannerTitle/fonts/font = ExtResource("2_bold")
+BodyText/base_type = &"Label"
+BodyText/font_sizes/font_size = 20
+DialogueBody/base_type = &"RichTextLabel"
+DialogueBody/colors/default_color = Color(0.945098, 0.968627, 0.94902, 1)
+DialogueBody/constants/line_separation = 4
+DialogueBody/font_sizes/normal_font_size = 26
+DialogueBody/fonts/normal_font = ExtResource("1_regular")
+DialogueBody/styles/normal = SubResource("StyleBoxEmpty_blank")
+H1/base_type = &"Label"
+H1/colors/font_color = Color(0.960784, 0.772549, 0.258824, 1)
+H1/colors/font_outline_color = Color(0, 0, 0, 0.85098)
+H1/constants/outline_size = 8
+H1/font_sizes/font_size = 44
+H1/fonts/font = ExtResource("2_bold")
+Heading/base_type = &"Label"
+Heading/colors/font_color = Color(0.960784, 0.772549, 0.258824, 1)
+Heading/font_sizes/font_size = 30
+Heading/fonts/font = ExtResource("2_bold")
+HealthBar/base_type = &"ProgressBar"
+HealthBar/styles/background = SubResource("StyleBoxFlat_health_bg")
+HealthBar/styles/fill = SubResource("StyleBoxFlat_health_fill")
+Hint/base_type = &"Label"
+Hint/colors/font_color = Color(0.615686, 0.713725, 0.647059, 1)
+Hint/font_sizes/font_size = 16
+Label/colors/font_color = Color(0.945098, 0.968627, 0.94902, 1)
+MemberName/base_type = &"Label"
+MemberName/font_sizes/font_size = 26
+MemberName/fonts/font = ExtResource("2_bold")
+Nim/base_type = &"Label"
+Nim/colors/font_color = Color(0.615686, 0.713725, 0.647059, 1)
+Nim/font_sizes/font_size = 16
+PageTitle/base_type = &"Label"
+PageTitle/colors/font_color = Color(0.960784, 0.772549, 0.258824, 1)
+PageTitle/font_sizes/font_size = 30
+PageTitle/fonts/font = ExtResource("2_bold")
+PanelBox/base_type = &"PanelContainer"
+PanelBox/styles/panel = SubResource("StyleBoxFlat_panel")
+PanelHint/base_type = &"Label"
+PanelHint/colors/font_color = Color(0.615686, 0.713725, 0.647059, 1)
+PanelHint/font_sizes/font_size = 16
+PanelLine/base_type = &"Label"
+PanelLine/font_sizes/font_size = 20
+PanelSoft/base_type = &"PanelContainer"
+PanelSoft/styles/panel = SubResource("StyleBoxFlat_panel_soft")
+PanelTitle/base_type = &"Label"
+PanelTitle/colors/font_color = Color(0.960784, 0.772549, 0.258824, 1)
+PanelTitle/font_sizes/font_size = 22
+PanelTitle/fonts/font = ExtResource("2_bold")
+PortraitFrame/base_type = &"PanelContainer"
+PortraitFrame/styles/panel = SubResource("StyleBoxFlat_portrait")
+Prompt/base_type = &"Label"
+Prompt/font_sizes/font_size = 22
+Role/base_type = &"Label"
+Role/colors/font_color = Color(0.494118, 0.878431, 0.541176, 1)
+Role/font_sizes/font_size = 18
+Role/fonts/font = ExtResource("2_bold")
+Speaker/base_type = &"Label"
+Speaker/colors/font_color = Color(0.960784, 0.772549, 0.258824, 1)
+Speaker/font_sizes/font_size = 30
+Speaker/fonts/font = ExtResource("2_bold")
+SpeakerRole/base_type = &"Label"
+SpeakerRole/colors/font_color = Color(0.615686, 0.713725, 0.647059, 1)
+SpeakerRole/font_sizes/font_size = 16
+Stat/base_type = &"Label"
+Stat/font_sizes/font_size = 26
+Stat/fonts/font = ExtResource("2_bold")
+Subtitle/base_type = &"Label"
+Subtitle/colors/font_outline_color = Color(0, 0, 0, 0.898039)
+Subtitle/constants/outline_size = 8
+Subtitle/font_sizes/font_size = 26
+Title/base_type = &"Label"
+Title/colors/font_color = Color(0.960784, 0.772549, 0.258824, 1)
+Title/colors/font_outline_color = Color(0, 0, 0, 0.898039)
+Title/constants/outline_size = 12
+Title/font_sizes/font_size = 84
+Title/fonts/font = ExtResource("2_bold")
+Toast/base_type = &"Label"
+Toast/colors/font_outline_color = Color(0, 0, 0, 0.898039)
+Toast/constants/outline_size = 8
+Toast/font_sizes/font_size = 22
+Toast/fonts/font = ExtResource("2_bold")

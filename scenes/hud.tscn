@@ -1,0 +1,200 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_script"]
+[ext_resource type="Theme" path="res://resources/ui_theme.tres" id="2_theme"]
+[ext_resource type="Texture2D" path="res://brackeys_platformer_assets/sprites/coin.png" id="3_coin"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_coin"]
+atlas = ExtResource("3_coin")
+region = Rect2(0, 0, 16, 16)
+
+[node name="Hud" type="CanvasLayer"]
+layer = 50
+process_mode = 3
+script = ExtResource("1_script")
+
+[node name="HudRoot" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_theme")
+
+[node name="HealthBox" type="VBoxContainer" parent="HudRoot"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 22.0
+offset_top = 18.0
+offset_right = 322.0
+offset_bottom = 78.0
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="HealthTitle" type="Label" parent="HudRoot/HealthBox"]
+layout_mode = 2
+theme_type_variation = &"Hint"
+text = "NYAWA"
+
+[node name="HealthRow" type="HBoxContainer" parent="HudRoot/HealthBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HealthBar" type="ProgressBar" parent="HudRoot/HealthBox/HealthRow"]
+custom_minimum_size = Vector2(220, 22)
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"HealthBar"
+max_value = 100.0
+value = 100.0
+show_percentage = false
+
+[node name="HealthValue" type="Label" parent="HudRoot/HealthBox/HealthRow"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"Stat"
+text = "100"
+
+[node name="StatusColumn" type="VBoxContainer" parent="HudRoot"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -396.0
+offset_top = 14.0
+offset_right = -22.0
+offset_bottom = 200.0
+grow_horizontal = 0
+theme_override_constants/separation = 6
+
+[node name="CoinBox" type="HBoxContainer" parent="HudRoot/StatusColumn"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="CoinIcon" type="TextureRect" parent="HudRoot/StatusColumn/CoinBox"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_coin")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CoinLabel" type="Label" parent="HudRoot/StatusColumn/CoinBox"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"Heading"
+text = "Koin: 0"
+
+[node name="MissionPanel" type="PanelContainer" parent="HudRoot/StatusColumn"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"PanelBox"
+
+[node name="MissionBox" type="VBoxContainer" parent="HudRoot/StatusColumn/MissionPanel"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="MissionTitle" type="Label" parent="HudRoot/StatusColumn/MissionPanel/MissionBox"]
+layout_mode = 2
+theme_type_variation = &"PanelTitle"
+text = "MISI: SELAMATKAN HAFIDZ"
+
+[node name="MissionCoins" type="Label" parent="HudRoot/StatusColumn/MissionPanel/MissionBox"]
+layout_mode = 2
+theme_type_variation = &"PanelLine"
+text = "Koin terkumpul: 0 / 0"
+
+[node name="MissionEnemies" type="Label" parent="HudRoot/StatusColumn/MissionPanel/MissionBox"]
+layout_mode = 2
+theme_type_variation = &"PanelLine"
+text = "Monster dikalahkan: 0 / 0"
+
+[node name="MissionHint" type="Label" parent="HudRoot/StatusColumn/MissionPanel/MissionBox"]
+custom_minimum_size = Vector2(330, 0)
+layout_mode = 2
+theme_type_variation = &"PanelHint"
+text = "Tujuan: Kumpulkan koin dan kalahkan monster untuk menemukan Hafidz."
+autowrap_mode = 3
+
+[node name="ToastBox" type="VBoxContainer" parent="HudRoot"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 40.0
+offset_top = 104.0
+offset_right = -40.0
+offset_bottom = 300.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="PromptCenter" type="CenterContainer" parent="HudRoot"]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -104.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="PromptPanel" type="PanelContainer" parent="HudRoot/PromptCenter"]
+layout_mode = 2
+theme_type_variation = &"PanelSoft"
+
+[node name="PromptLabel" type="Label" parent="HudRoot/PromptCenter/PromptPanel"]
+layout_mode = 2
+theme_type_variation = &"Prompt"
+text = "Tekan E untuk berbicara."
+
+[node name="BannerCenter" type="CenterContainer" parent="HudRoot"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BannerPanel" type="PanelContainer" parent="HudRoot/BannerCenter"]
+custom_minimum_size = Vector2(620, 0)
+layout_mode = 2
+theme_type_variation = &"BannerPanel"
+
+[node name="BannerBox" type="VBoxContainer" parent="HudRoot/BannerCenter/BannerPanel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BannerTitle" type="Label" parent="HudRoot/BannerCenter/BannerPanel/BannerBox"]
+layout_mode = 2
+theme_type_variation = &"BannerTitle"
+text = "MISI BERHASIL!"
+horizontal_alignment = 1
+
+[node name="BannerText" type="Label" parent="HudRoot/BannerCenter/BannerPanel/BannerBox"]
+custom_minimum_size = Vector2(560, 0)
+layout_mode = 2
+theme_type_variation = &"BannerText"
+text = "Terima kasih telah menjadi bagian dari petualangan kami!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Fade" type="ColorRect" parent="HudRoot"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

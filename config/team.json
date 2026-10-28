@@ -1,0 +1,27 @@
+{
+  "_comment": "Isi data tim di sini. Kosongkan NIM bila belum ada - game akan menampilkan 'NIM: (belum diisi)'. Ganti 'portrait' dengan foto asli (rasio 1:1, mis. 512x512) lalu simpan di folder res://Aset2d/Portraits/.",
+  "team_name": "Kelompok 3",
+  "members": [
+	{
+	  "key": "zhafran",
+	  "name": "Muhammad Naufal Zhafran",
+	  "role": "Artist",
+	  "nim": "240533607996",
+	  "portrait": "res://Aset2d/Portraits/portrait_zhafran.png"
+	},
+	{
+	  "key": "sandho",
+	  "name": "Muhammad Ikhsan Ridho",
+	  "role": "Project Manager & Level Manager",
+	  "nim": "240533609185",
+	  "portrait": "res://Aset2d/Portraits/portrait_sandho.png"
+	},
+	{
+	  "key": "hafidz",
+	  "name": "Mohammad Hafidz Suhaiby",
+	  "role": "Programmer",
+	  "nim": "240533607874",
+	  "portrait": "res://Aset2d/Portraits/portrait_hafidz.png"
+	}
+  ]
+}

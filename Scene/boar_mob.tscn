@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dgjqugc26h02e" path="res://Legacy-Fantasy - High Forest 2.3/Mob/Boar/Idle/Idle-Sheet.png" id="2_i12oi"]
 [ext_resource type="Texture2D" uid="uid://c0ulci3c3swxp" path="res://Legacy-Fantasy - High Forest 2.3/Mob/Boar/Run/Run-Sheet.png" id="3_4ipjp"]
 [ext_resource type="Texture2D" uid="uid://mju0j5ojp2np" path="res://Legacy-Fantasy - High Forest 2.3/Mob/Boar/Walk/Walk-Base-Sheet.png" id="4_bgyiy"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="9_script"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_spsf0"]
 atlas = ExtResource("1_qob3j")
@@ -172,6 +173,7 @@ animations = [{
 size = Vector2(40, 27)
 
 [node name="Boar_mob" type="CharacterBody2D" unique_id=1040439795]
+script = ExtResource("9_script")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=881303426]
 sprite_frames = SubResource("SpriteFrames_5h11f")

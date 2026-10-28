@@ -1,0 +1,111 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/dialogue_system.gd" id="1_script"]
+[ext_resource type="Theme" path="res://resources/ui_theme.tres" id="2_theme"]
+
+[node name="Dialogue" type="CanvasLayer"]
+layer = 100
+process_mode = 3
+script = ExtResource("1_script")
+
+[node name="DialogueRoot" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_theme")
+
+[node name="Dim" type="ColorRect" parent="DialogueRoot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0196078, 0.0509804, 0.0313725, 0.54902)
+
+[node name="Panel" type="PanelContainer" parent="DialogueRoot"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 44.0
+offset_top = -262.0
+offset_right = -44.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_type_variation = &"PanelBox"
+
+[node name="Margin" type="MarginContainer" parent="DialogueRoot/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 2
+
+[node name="Row" type="HBoxContainer" parent="DialogueRoot/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="PortraitFrame" type="PanelContainer" parent="DialogueRoot/Panel/Margin/Row"]
+clip_contents = true
+custom_minimum_size = Vector2(186, 186)
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"PortraitFrame"
+
+[node name="Portrait" type="TextureRect" parent="DialogueRoot/Panel/Margin/Row/PortraitFrame"]
+texture_filter = 1
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="PortraitInitial" type="Label" parent="DialogueRoot/Panel/Margin/Row/PortraitFrame"]
+layout_mode = 2
+theme_type_variation = &"H1"
+text = "Z"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Info" type="VBoxContainer" parent="DialogueRoot/Panel/Margin/Row"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="SpeakerName" type="Label" parent="DialogueRoot/Panel/Margin/Row/Info"]
+layout_mode = 2
+theme_type_variation = &"Speaker"
+text = "Zhafran"
+
+[node name="SpeakerRole" type="Label" parent="DialogueRoot/Panel/Margin/Row/Info"]
+layout_mode = 2
+theme_type_variation = &"SpeakerRole"
+text = "Artist"
+
+[node name="PageTitle" type="Label" parent="DialogueRoot/Panel/Margin/Row/Info"]
+layout_mode = 2
+theme_type_variation = &"PageTitle"
+text = "PROLOG"
+horizontal_alignment = 1
+
+[node name="Body" type="RichTextLabel" parent="DialogueRoot/Panel/Margin/Row/Info"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"DialogueBody"
+bbcode_enabled = true
+text = "Teks dialog akan tampil di sini."
+scroll_active = false
+autowrap_mode = 3
+
+[node name="ContinueHint" type="Label" parent="DialogueRoot/Panel/Margin/Row/Info"]
+layout_mode = 2
+theme_type_variation = &"Hint"
+text = "E : lanjut"
+horizontal_alignment = 2
